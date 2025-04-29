@@ -1,0 +1,54 @@
+.popup {
+    display: none;
+    position: absolute; /* Positions the popup relative to the hospital card */
+    top: 100%; /* Ensures popup appears directly below */
+    left: 0;
+    width: 100%; /* Matches hospital card width */
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+
+.hospital-card {
+    position: relative; /* Ensures popup is positioned relative to this */
+}
+
+.popup-content {
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+.hospital-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hospital-item:hover {
+    background: #f5f5f5;
+}
+.hospital-item a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    padding: 10px;
+}
+
+.hospital-item a:hover {
+    background: #f1f1f1;
+    color: #0056b3;
+}

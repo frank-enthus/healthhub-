@@ -1,0 +1,54 @@
+/* Search Bar */
+.search-container {
+    display: none;
+    max-width: 350px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+/* Search Input */
+.search-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #a833ff;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(168, 51, 255, 0.3);
+}
+/* Ensure dropdown appears properly */
+.dropdown-content {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Dropdown Item */
+.dropdown-item {
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:hover {
+    background: #f4f4f4;
+}
+
+/* Fix search bar positioning */
+.search-container {
+    display: none;
+    max-width: 350px;
+    margin: 15px auto;
+    text-align: center;
+    position: relative;
+}

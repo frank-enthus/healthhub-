@@ -1,0 +1,356 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Admin Container */
+.admin-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar - Dark Modern Look */
+.sidebar {
+    width: 220px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease;
+}
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar.collapsed h2,
+.sidebar.collapsed ul li a span {
+    display: none;
+}
+/* Sidebar Title */
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ecf0f1;
+    display: none;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    display: block;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    font-size: 16px;
+}
+
+/* Sidebar Hover & Active */
+.sidebar ul li a:hover {
+    background: #3498db;
+    color: white;
+}
+
+.sidebar ul li a.active {
+    background: #2980b9;
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Individual Stat Box */
+.stat-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Stat Box Hover */
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Stat Text */
+.stat-box h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.stat-box p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+/* Management Section - Align Horizontally */
+.management-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping if screen is small */
+    justify-content: space-between; /* Ensures even spacing */
+    align-items: flex-start;
+    gap: 20px; /* Space between sections */
+    width: 100%;
+}
+
+.management-section {
+    flex: 1; /* Ensures equal width */
+    min-width: 350px;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+}
+
+
+.management-section input,
+.management-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.management-section button {
+    width: 100%;
+    padding: 12px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.management-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.management-section button:hover {
+    background: #1f6690;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .management-container {
+        flex-direction: column;
+    }
+}
+
+
+/* Hospital List */
+.hospital-list,.doctor-list,.patient-list {
+    flex: 2;
+    min-width: 700px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    max-width: 100%;
+    max-height: 400px;
+    margin-top: 10px; /* Space above the patient table */
+    margin-bottom: 30px; /* Space above the patient table */
+}
+
+/* Hospital Table */
+.hospital-list table {
+    width: 100%;
+    min-width: 700px;
+    overflow-x: auto;
+    display: block;
+    margin-bottom: 30px; /* Space above the patient table */
+    background-color: #fd7e14; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 8px;
+
+
+}
+
+.hospital-list th,
+.hospital-list td {
+    font-size: 14px;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #fff;
+    padding: 10px;
+}
+
+/* Hospital Image */
+.hospital-img,.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+/* doctor Table */
+.doctor-list table {
+    width: 100%;
+    min-width: 700px;
+    overflow-x: auto;
+    display: block;
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 8px; 
+  
+
+}
+
+.doctor-list th,
+.doctor-list td {
+    font-size: 14px;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #fff;
+    padding: 10px;
+}
+
+.doctor-img {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px;
+    object-fit: cover; /* Ensures images don't stretch */
+    border-radius: 50%; /* Makes the images circular */
+}
+.patient-list table {
+    width: 100%;
+    min-width: 700px;
+    overflow-x: auto;
+    display: block;
+    background-color: #28a745; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 8px;
+  
+
+}
+
+.patient-list th,
+.patient-list td {
+    font-size: 14px;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #fff;
+    padding: 10px;
+}
+
+.patient-img{
+    width: 50px; /* Adjust the width as needed */
+    height: 50px;
+    object-fit: cover; /* Ensures images don't stretch */
+    border-radius: 50%; /* Makes the images circular */
+}
+
+
+/* Buttons */
+.edit-btn,
+.delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.delete-btn {
+    display: inline-block;
+    margin: 2px;
+    background: #c0392b;
+    color: white;
+}
+.hospital-list table tr:nth-child(even),
+.doctor-list table tr:nth-child(even),
+.patient-list table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+        padding: 10px;
+    }
+    
+    .sidebar h2 {
+        display: none;
+    }
+
+    .sidebar ul li a {
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

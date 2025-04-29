@@ -1,0 +1,9 @@
+# Ignore node modules (common for JS/Node projects)
+node_modules/
+
+# Optional: Ignore system/OS files
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore logs
+*.log

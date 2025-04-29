@@ -1,0 +1,218 @@
+/* Updated CSS */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling for the entire page */
+}
+
+/* Left Section */
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align the form closer to the top */
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  padding: 1rem;
+  color: white;
+  overflow-y: auto; /* Enable scrolling within the form if needed */
+}
+
+.form-wrapper {
+  width: 90%;
+  max-width: 350px;
+  background: white;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem; /* Add top margin to push it down slightly */
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  color: #185a9d;
+  margin-bottom: 0.5rem;
+}
+
+.form-wrapper p {
+  text-align: center;
+  color: #555;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group input[type="file"] {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border: 1px solid #43cea2;
+}
+
+/* Submit Button */
+.btn-primary {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  color: white;
+  background: #43cea2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 1rem; /* Add margin to separate it from the last input */
+}
+
+.btn-primary:hover {
+  background: #185a9d;
+}
+
+/* Right Section */
+.right-section {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #eef2f3, #8e9eab);
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3; /* Makes the image blend into the background */
+}
+
+.overlay-text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #185a9d;
+}
+
+.overlay-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Responsive Fix */
+@media (max-height: 800px) {
+  .form-wrapper {
+    max-height: 85vh;
+    overflow-y: auto; /* Allow scrolling only for the form itself */
+    padding: 0.8rem;
+  }
+
+  .form-wrapper h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+}
+/* Add the existing styles here... */
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 40%;
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+}
+
+.close {
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .form-wrapper {
+    max-width: 90%;
+  }
+
+  .overlay-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .overlay-text p {
+    font-size: 0.85rem;
+  }
+}

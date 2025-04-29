@@ -1,0 +1,107 @@
+/* Ensure dropdown appears correctly without affecting layout */
+#doctor-results {
+    position: absolute;
+    top: 100%; /* Stays below input */
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+    z-index: 99999; /* Ensures it's above the map */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Ensure the search container is positioned properly */
+.search-container {
+    position: relative;
+    z-index: 10000;
+}
+
+/* Fix z-index for the map so it doesn’t overlap the dropdown */
+#map-container {
+    position: relative;
+    z-index: 1 !important; /* Pushes map behind */
+}
+
+/* Style the doctor dropdown list */
+#doctor-results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style each doctor result */
+#doctor-results li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease-in-out;
+    border-radius: 5px;
+    background: white; /* Prevents transparency */
+    position: relative;
+    z-index: 9999; /* Keeps doctors list on top */
+}
+
+/* Add hover effect */
+#doctor-results li:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* Doctor profile image */
+.doctor-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #007bff;
+}
+
+/* Doctor details */
+.doctor-details {
+    flex-grow: 1;
+}
+
+.doctor-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.doctor-specialty {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Appointment button */
+.book-appointment-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.book-appointment-btn:hover {
+    background-color: #0056b3;
+}
+.doctor-card .doctor-search-dropdown {
+    position: absolute; /* Absolute positioning within the card */
+    top: 100%; /* Ensures it appears below the card */
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Makes sure the dropdown appears above the card */
+}
+/* Disable interactions with the map when dropdown is visible */
+#map.disable-interaction {
+    pointer-events: none;
+}
